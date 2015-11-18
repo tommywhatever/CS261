@@ -1,0 +1,235 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/java assignment.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<!-- template parameters -->
+<!-- InstanceParam name="asgmtVersion" type="text" value="2" -->
+<title>CS261 Assignment 2</title>
+<style type="text/css">
+<!--
+.code {
+	font-family: Consolas, "Courier New", Courier, monospace;
+	font-size: 14px;
+}
+.header {
+	font-family: Cambria, Georgia, "Times New Roman", Times, serif;
+	font-size: 20px;
+	font-weight: normal;
+	text-decoration: underline;
+}
+.text {
+	font-family: Cambria, Georgia, "Times New Roman", Times, serif;
+	font-size: medium;
+	font-style: normal;
+}
+.title {
+	font-size: 24px;
+	font-weight: bold;
+	text-decoration: underline;
+	font-family: Cambria, Georgia, "Times New Roman", Times, serif;
+}
+.tableCellBg {
+	background-color: #FDE7D9;
+}
+-->
+</style>
+</head>
+<body class="text">
+<p class="title">CS261 Assignment 2 Instructions</p>
+<p class="header">Code To Start With</p>
+<p>This assignment provides a you with a .zip file containing the code you should start with. The .zip file will expand into a folder that is set up to be both a BlueJ project and an Eclipse project.</p>
+<p><span class="header">JAR Files</span> </p>
+<p>Java executables are packaged as JAR (<strong>J</strong>ava <strong>AR</strong>chive) files. A JAR file is actually a Zip file. You can open a JAR file with any Zip utility (e.g. <a href="http://7-zip.org/" target="_blank">7-Zip</a>). Once you&rsquo;re ready to submit your work, you will need to create a JAR file containing your code. Both BlueJ and Eclipse have the ability to do this (see the <strong>How To Create a JAR File...</strong> sections below). In order for your work to be graded, your JAR file must be executable from the command line.</p>
+<p>Each JAR file contains a folder named <strong>META-INF</strong>. This folder contains a file named <strong>MANIFEST.MF</strong>, which is the JAR file&rsquo;s &ldquo;manifest file.&rdquo; The manifest file is a text file that specifies which Java class in the JAR file contains the<span class="code"> main()</span> method. The Java Virtual Machine needs this information in order to be able to run your code from the command line.</p>
+<p> You should not change the structure of your project folder <em>in any way</em>. Do not rename files, do not move files to a different folder, do not create new folders or files, etc. I grade your code using a Python script that depends on files and folders being in the expected places.</p>
+<!-- InstanceBeginEditable name="description" -->
+<h3 class="header">Regular Assignment</h3>
+<p><i>There is no Premium version for this assignment</i> <br />
+  <br />
+  Starting with the provided code, write a Java command-line application that shuffles a standard deck of playing cards,
+and then deals the cards in the normal manner. You should look at the <a href="http://download.oracle.com/javase/1.5.0/docs/guide/language/enums.html" target="_blank"><u>card-related code</u></a> from this Java web page. Your code should use the <strong>enum</strong> feature of Java that is mentioned on that page.</p>
+<p>The provided code contains five class definitions:</p>
+<table>
+<tr>
+<td align="left" valign="top">
+<ul>
+  <li>Assignment2.java</li>
+  <li>Dealer.java</li>
+  <li>Deck.java</li>
+  <li>Hand.java</li>
+  <li>Card.java</li>
+</ul>
+</td>
+    <td align="left" valign="top" width="20">&nbsp;</td>
+    <td align="left" valign="top">
+      <p><em>contains the </em><span class="code">main()</span><em> method</em><br />
+        <em>deals out the hands of cards</em><br />
+      <em>the deck of playing cards</em><br />
+      <em>a set of cards dealt by the dealer</em><br />
+      <em>a playing card</em></p></td>
+</tr>
+</table>
+<p>When you write your code, you should have each of these classes do what would be appropriate in a real-world card game. The Deck, for instance, should not deal itself into Hands &#8211; the Dealer should do that. A Hand of cards should compute its own score &#8211; the Dealer <em>should not</em> do that. In other words, your code should exhibit good <em>cohesion</em>. Your code will be graded, in part, on its cohesion with respect to the concept of a card game.</p>
+<p>Do not add any additional classes to this project. Do not delete any of the classes that are provided.</p>
+<p> Five things will be specified on the command line: </p>
+<ul>
+  <li>number of games</li>
+  <li>number of hands dealt</li>
+  <li>number of cards per hand</li>
+  <li>number of cards per line in the printout</li>
+  <li>whether to shuffle the deck before dealing<br />
+  (i.e. whether to re-order the cards in a random manner)</li>
+</ul>
+<p>Your code should work with various values of these command line arguments.<br />
+  <br />
+  Each card has a score, computed as the product of its values in the following tables:
+</p>
+<table cellspacing="30">
+  <tr valign="top">
+    <td><table border="1" cellpadding="8" bgcolor="EEEEEE" class="tableCellBg">
+      <tr>
+        <td><i>Suit</i></td>
+        <td align="center"><i>Value</i></td>
+      </tr>
+      <tr>
+        <td>Heart</td>
+        <td align="center">4</td>
+      </tr>
+      <tr>
+        <td>Diamond</td>
+        <td align="center">3</td>
+      </tr>
+      <tr>
+        <td>Club</td>
+        <td align="center">2</td>
+      </tr>
+      <tr>
+        <td>Spade</td>
+        <td align="center">1</td>
+      </tr>
+    </table></td>
+    <td width="20"></td>
+    <td><table border="1" cellpadding="8" bgcolor="EEEEEE" class="tableCellBg">
+      <tr>
+        <td><i>Card</i></td>
+        <td align="center"><i>Value</i></td>
+      </tr>
+      <tr>
+        <td>Ace</td>
+        <td align="center">11</td>
+      </tr>
+      <tr>
+        <td>King, Queen, Jack</td>
+        <td align="center">10</td>
+      </tr>
+      <tr>
+        <td>10 &ndash; 2</td>
+        <td align="center">the number on<br />
+          the card</td>
+      </tr>
+    </table></td>
+  </tr>
+</table>
+<p>The ACE of SPADES, for example, has a score of 11.  The FOUR of HEARTS has a score of 16.</p>
+<p>You should implement these scores by having each member of the <i>Suit</i> and <i>Card</i> enums
+carry its own score. <i>If you do not do this, you will lose significant points in your grade.</i></p>
+<p>A hand's score is computed as the sum of the scores of the cards it contains.</p>
+<p>Your application, when run from the command line like this:</p>
+<blockquote>
+  <pre class="code">java -jar asgmt02.jar 2 5 5 3 false</pre>
+</blockquote>
+<p>Should produce output identical to the contents of <strong>asgmt02.out.txt</strong>, which is contained in <strong>asgmt02.zip</strong>.</p>
+
+<p>In this example, the code was told not to shuffle the deck. When your code does not shuffle the deck, <em><u>it is required</u></em> that your cards be in the same order as what&rsquo;s shown in <strong>asgmt02.out.txt</strong><em>.</em> In other words, when the deck is not shuffled, <span class="text">ACE of HEARTS</span> should be the first card, <span class="text">KING of HEARTS</span> should be the second, and so on down to <span class="text">DEUCE of SPADES</span> being the last card.</p>
+<p><span style="font-style: italic">Important:</span> note  that the first card in the deck goes into the first hand, the second card in the deck
+  goes into the second hand, and so on &ndash; just like how you would actually deal
+  playing cards in the physical world. <br />
+  <br />
+Make sure that your deck prints the specified number of cards per line for as many lines as needed to print the 52 cards in the deck. Note that when a group of cards is printed out, a comma follows each card except the last one, <em>including at the ends of lines</em>. Your code will need to do this.</p>
+<p>Start your work with the <strong>asgmt02</strong> project, which is both a BlueJ project and an Eclipse project. Submit your work as <b>asgmt02.jar</b>.  Make sure to include your <span class="style1">.java </span>source code files in your <span class="style1">.jar </span>file. <br />
+</p>
+<p class="header">Grading</p>
+<p>Your work will be graded on the quality of your object-oriented design
+  in addition to how well it works. In particular, pay attention to <em>cohesion</em>. The classes in your code should do what the entities that make up an actual game of cards would do. A class should not do anything that its corresponding real-world entity would not do.</p>
+<p>For example, a Card class <em>would not</em> manage collections of cards; a Deck class would not deal itself. Instances of a Card class should represent individual playing cards, and its code should only do things that relate to the capabilities and attributes of an individual card. Do not allow the <a href="http://download.oracle.com/javase/1.5.0/docs/guide/language/enums.html" target="_blank"><u>card-related code</u></a> to influence your decisions about your object-oriented design. While this code can be useful to you as a starting point, don&rsquo;t assume that it&rsquo;s well-written just because it appears on an &ldquo;official&rdquo; web page. </p>
+<p class="header">Required JAR File Structure</p>
+<p>Here is the required structure for the .jar file that you will submit for either version of this assignment:</p>
+<table width="90%">
+  <tr>
+    <td align="left" valign="top"><ul>
+      <li><em>.jar file</em>
+        <ul>
+          <li>Assignment2.java</li>
+          <li>Assignment2.class</li>
+          <li>Dealer.java</li>
+          <li>Dealer.class</li>
+          <li>Deck.java</li>
+          <li>Deck.class</li>
+          <li>Hand.java</li>
+          <li>Hand.class</li>
+          <li>Card.java</li>
+          <li>Card.class</li>
+          <li>Card$Suit.class</li>
+          <li>Card$Rank.class</li>
+          <li>META-INF
+            <ul>
+              <li>MANIFEST.MF</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul></td>
+    <td align="left" valign="top" width="20">&nbsp;</td>
+    <td align="left" valign="top">
+      <p>&nbsp;<br />
+      &nbsp;<br />
+      &nbsp;<br />
+      &nbsp;<br />
+      &nbsp;<br />
+      &nbsp;<br />
+      &nbsp;<br />
+      &nbsp;<br />
+      &nbsp;<br />
+      &nbsp;<br />
+      &nbsp;<br />
+      &nbsp;<em>compiled form of the Suit enum</em><br />
+      &nbsp;<em>compiled form of the Rank enum</em><br />
+      <em>(folder)</em><br />
+      <em>manifest file created by your IDE &#8211; specifies the class containing the</em><span class="code"> main()</span><em> method</em></p></td>
+  </tr>
+</table>
+<p>You can use any Zip utility (e.g. <a href="http://7-zip.org/" target="_blank">7-Zip</a>) to check the structure of your .jar file.</p>
+<p>&nbsp;</p>
+<!-- InstanceEndEditable --><span class="header">How To Create a JAR File in BlueJ </span>
+<p>To create a <span class="style1">.jar </span>file from a BlueJ project, do the following:</p>
+<ol>
+  <li>&ldquo;Project&rdquo; menu, &ldquo;Create Jar File &rdquo; command (was &ldquo;Export...&rdquo; in older versions of BlueJ) </li>
+  <li>choose &ldquo;Store as jar file&rdquo;</li>
+  <li>main class: choose the class that defines the <strong>main</strong> method</li>
+  <li>check &ldquo;include source&rdquo; (if you don&rsquo;t do this, your .java files will not be included and your work will not be graded) </li>
+  <li>click &ldquo;Continue&rdquo;</li>
+  <li>choose a name and a place for the JAR file</li>
+</ol>
+<span class="header">How To Create a JAR File in Eclipse </span>
+<p>To create a <span class="style1">.jar </span>file from an  Eclipse project, do the following:</p>
+<ol>
+  <li>in the Project Explorer view, click the small triangle to the left of your project, which will open an outline view</li>
+  <li>right click on the .jardesc (JAR DESCription) file</li>
+  <li>click on &ldquo;Create JAR&rdquo;</li>
+</ol>
+<p>The .jar file will be created in your project folder. Each assignment project for this course will include a .jardesc file.</p>
+<span class="header"></span><!-- #BeginLibraryItem "/Library/submit asgmt to D2L.lbi" -->
+<!-- This library item is designed for use with either "java assignment.dwt" or "cpp assignment.dwt".
+	 It requires that .header be defined in the CSS of the .dwt file -->
+<!-- uses .header from the .dwt file's CSS -->
+<span class="header">To Submit This Assignment</span>
+<p>Submit the requested file to Desire2Learn. &nbsp; Make sure that your code prints your name, assignment description, and number, as requested. </p>
+<ul>
+  <li>Be  certain to check that you completed the upload successfully. After you click  the Upload File button, you must also click the <strong>SUBMIT ASSIGNMENT </strong>button. This  is very easy to forget. If you do not do this, I will not see your work and you will get a grade of zero for the assignment. I would recommend entering an  email address so you can be notified that the upload was completed  successfully.</li>
+  <li>You  may upload as many versions as you wish prior to the due date. I will only see  and grade the final one. You will not be able to upload assignments after due date.</li>
+  <li>Points will be deducted for uploading a file with a name that is not as specified. Every term I get a few students whose approach to following directions is, shall we say, &ldquo;creative.&rdquo; I encourage creativity in general, but there are places where it is <u>not appropriate</u>.</li>
+</ul>
+<!-- #EndLibraryItem -->
+<p>&nbsp;</p>
+</body>
+<!-- InstanceEnd --></html>
