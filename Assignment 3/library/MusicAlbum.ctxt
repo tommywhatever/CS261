@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.params=title\ band\ numSongs\ keywords
+comment0.target=MusicAlbum(java.lang.String,\ java.lang.String,\ int,\ java.lang.String[])
+comment1.params=keywords
+comment1.target=void\ addMembers(java.lang.String[])
+comment2.params=
+comment2.target=java.util.Collection\ getBandMembers()
+comment3.params=
+comment3.target=java.lang.String\ getBandName()
+comment4.params=
+comment4.target=java.lang.String\ toString()
+numComments=5
